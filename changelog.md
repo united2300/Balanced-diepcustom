@@ -15,6 +15,9 @@ nerfed every barrel of pentashots recoil by 0.3
 buffed twin flank and triple twin damage by 0.05
 buffed gunner and auto gunner penetration by 0.05
 buffed streamliner bullet lifelength to the norm (1)
+buffed skmimer bulletspeed by 0.2 and lifelength by 0.1
+buffed hunter and pred bulletspeed by 0.05
+buffed hunter dmg by 0.05
 
 Day 1:
 
