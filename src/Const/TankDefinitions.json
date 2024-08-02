@@ -1174,7 +1174,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.5,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -1196,7 +1196,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.5,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -2777,7 +2777,7 @@
                     "health": 1,
                     "damage": 1,
                     "speed": 1.6,
-                    "scatterRate": 0.3,
+                    "scatterRate": 0,
                     "lifeLength": 1,
                     "absorbtionFactor": 1
                 }
@@ -2869,7 +2869,7 @@
                 "offset": 0,
                 "size": 70,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.66,
                 "reload": 1,
                 "recoil": 0.2,
                 "isTrapezoid": false,
@@ -2891,7 +2891,7 @@
                 "offset": 0,
                 "size": 70,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.66,
                 "reload": 1,
                 "recoil": 0.2,
                 "isTrapezoid": false,
@@ -2913,7 +2913,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.33,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -2935,7 +2935,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.33,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -3083,7 +3083,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.5,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -3105,7 +3105,7 @@
                 "offset": 0,
                 "size": 80,
                 "width": 42,
-                "delay": 0,
+                "delay": 0.5,
                 "reload": 1,
                 "recoil": 2.5,
                 "isTrapezoid": false,
@@ -4072,7 +4072,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 8,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.8
                 }
             }
         ],
@@ -4198,7 +4198,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 8,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.65
                 }
             }
         ],
@@ -4280,7 +4280,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 8,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.8
                 }
             },
             {
@@ -4410,7 +4410,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 8,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.65
                 }
             }
         ],
@@ -4492,7 +4492,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 3.2,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.8
                 }
             },
             {
@@ -4514,7 +4514,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 3.2,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.8
                 }
             },
             {
@@ -4536,7 +4536,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 3.2,
-                    "absorbtionFactor": 1
+                    "absorbtionFactor": 0.8
                 }
             }
         ],
