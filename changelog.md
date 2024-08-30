@@ -1,5 +1,6 @@
 
-
+Day 7
+buffed rocketeer by increasing its bullet lifespan by 0.2
 
 
 Day 6

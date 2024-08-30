@@ -6596,7 +6596,7 @@
                     "damage": 1,
                     "speed": 0.3,
                     "scatterRate": 1,
-                    "lifeLength": 1,
+                    "lifeLength": 1.2,
                     "absorbtionFactor": 0.1
                 }
             }
