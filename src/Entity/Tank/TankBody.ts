@@ -199,6 +199,7 @@ export default class TankBody extends LivingEntity implements BarrelBase {
                 }
 
                 const sunchip = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
+                const sunchip2 = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
             }
         }
     }

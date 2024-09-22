@@ -1,6 +1,8 @@
 
 Day 7
 buffed rocketeer by increasing its bullet lifespan by 0.2
+buffed stalker invis rate by 0.03
+Necro now spawns 2 drones/square kill
 
 
 Day 6
