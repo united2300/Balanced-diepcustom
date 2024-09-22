@@ -28,6 +28,7 @@ import { ArenaFlags, Tank } from "../../Const/Enums";
 import Client from "../../Client";
 import FallenSpike from "../../Entity/Misc/Boss/FallenSpike";
 import FallenOverlord from "../../Entity/Boss/FallenOverlord";
+import BirthdayGuardian from "../../Entity/Boss/BdayGuardian";
 /**
  * Only spawns crashers
  */
@@ -50,8 +51,7 @@ export default class TestingArena extends ArenaEntity {
         this.updateBounds(4000, 4000);
         this.arenaData.values.flags |= ArenaFlags.canUseCheats;
         setTimeout(() => {
-            new FallenOverlord(game);
-            new FallenSpike(game);
+            new BirthdayGuardian(game);
         }, 5000)
 
         // const tank1 = this.spawnTestTank(Tank.Booster);

@@ -1,3 +1,20 @@
+Day 11:
+Removed Jailbreaker due to being an unbalanced tank
+Added a new trial tank: Ambusher
+Buffed streamliner bullet pen by 0.1/barrel
+
+Day 10:
+Implemented Jailbreaker. New tank
+Fixed spikes broken BD
+Made dominators and arena closers admin only (cant have shit in destroit smh)
+Nerfed all smashers KB RES from 20% to 10%
+
+
+Day 9:
+Started work on the Birthday bosses
+
+Day 8:
+Added megasmasher as an extra tank (No addon for it yet though)
 
 Day 7
 buffed rocketeer by increasing its bullet lifespan by 0.2

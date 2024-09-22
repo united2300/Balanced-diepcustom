@@ -24,6 +24,7 @@ import Drone from "./Projectile/Drone";
 import Rocket from "./Projectile/Rocket";
 import Skimmer from "./Projectile/Skimmer";
 import Minion from "./Projectile/Minion";
+import JailbreakProjectile from "./Projectile/Jailbreaker";
 import ObjectEntity from "../Object";
 import TankBody, { BarrelBase } from "./TankBody";
 
@@ -205,6 +206,9 @@ export default class Barrel extends ObjectEntity {
             }
             case "croc": 
                 new CrocSkimmer(this, this.tank, tankDefinition, angle);
+                break;
+            case "jailbreak": 
+                new JailbreakProjectile(this, this.tank, tankDefinition, angle);
                 break;
             default:
                 util.log('Ignoring attempt to spawn projectile of type ' + this.definition.bullet.type);
