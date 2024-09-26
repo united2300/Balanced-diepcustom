@@ -24,6 +24,7 @@ import Vector from "../Physics/Vector";
 import { PhysicsGroup, PositionGroup, RelationsGroup, StyleGroup } from "../Native/FieldGroups";
 import { Entity } from "../Native/Entity";
 import { PositionFlags, PhysicsFlags } from "../Const/Enums";
+import { getTankById, TankDefinition } from "../Const/TankDefinitions";
 
 /**
  * The animator for how entities delete (the opacity and size fade out).

@@ -25,6 +25,7 @@ import ClientCamera, { CameraEntity } from "../../Native/Camera";
 import LivingEntity from "../Live";
 import ObjectEntity from "../Object";
 import Barrel from "./Barrel";
+import Velocity from "../../Physics/Velocity";
 
 import { Color, StyleFlags, StatCount, Tank, CameraFlags, Stat, InputFlags, PhysicsFlags, PositionFlags } from "../../Const/Enums";
 import { Entity } from "../../Native/Entity";
@@ -305,7 +306,7 @@ export default class TankBody extends LivingEntity implements BarrelBase {
         updateStats: {
             // Damage
             this.damagePerTick = this.cameraEntity.cameraData.statLevels[Stat.BodyDamage] * 4 + 20;
-            if (this._currentTank === Tank.Spike) this.damagePerTick += 8;
+            if (this._currentTank === Tank.Spike) this.damagePerTick += 8.5;
 
             // Max Health
             const maxHealthCache = this.healthData.values.maxHealth;
@@ -336,10 +337,24 @@ export default class TankBody extends LivingEntity implements BarrelBase {
             if (this.definition.flags.displayAsTrapezoid === true) this.physicsData.flags |= PhysicsFlags.isTrapezoid;
         } else if (this.definition.flags.displayAsStar === true) this.styleData.flags |= StyleFlags.isStar;
 
-        this.accel.add({
-            x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
-            y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
-        });
+        if (this.currentTank == Tank.Spike || Tank.Landmine || Tank.AutoSmasher || Tank.Smasher) {
+            this.accel.add({
+                x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed * 1.1,
+                y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed * 1.1
+            });
+
+            if (this.velocity.magnitude >= this.cameraEntity.cameraData.values.movementSpeed * 10)
+            {
+                this.velocity.set(new Velocity(Math.cos(this.velocity.angle) * (this.cameraEntity.cameraData.values.movementSpeed * 9 - this.cameraEntity.cameraData.values.movementSpeed * 5), Math.sin(this.velocity.angle) * (this.cameraEntity.cameraData.values.movementSpeed * 9 - this.cameraEntity.cameraData.values.movementSpeed * 5)));
+            }
+        }
+        else {
+            this.accel.add({
+                x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
+                y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
+            });
+        }
+
         this.inputs.movement.set({
             x: 0,
             y: 0
