@@ -337,23 +337,11 @@ export default class TankBody extends LivingEntity implements BarrelBase {
             if (this.definition.flags.displayAsTrapezoid === true) this.physicsData.flags |= PhysicsFlags.isTrapezoid;
         } else if (this.definition.flags.displayAsStar === true) this.styleData.flags |= StyleFlags.isStar;
 
-        if (this.currentTank == Tank.Spike || Tank.Landmine || Tank.AutoSmasher || Tank.Smasher) {
-            this.accel.add({
-                x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed * 1.1,
-                y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed * 1.1
-            });
 
-            if (this.velocity.magnitude >= this.cameraEntity.cameraData.values.movementSpeed * 10)
-            {
-                this.velocity.set(new Velocity(Math.cos(this.velocity.angle) * (this.cameraEntity.cameraData.values.movementSpeed * 9 - this.cameraEntity.cameraData.values.movementSpeed * 5), Math.sin(this.velocity.angle) * (this.cameraEntity.cameraData.values.movementSpeed * 9 - this.cameraEntity.cameraData.values.movementSpeed * 5)));
-            }
-        }
-        else {
-            this.accel.add({
-                x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
-                y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
-            });
-        }
+        this.accel.add({
+            x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
+            y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
+        });
 
         this.inputs.movement.set({
             x: 0,
