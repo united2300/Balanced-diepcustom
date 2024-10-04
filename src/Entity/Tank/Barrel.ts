@@ -56,7 +56,7 @@ export class ShootCycle {
     }
 
     public tick() {
-        const reloadTime = this.barrelEntity.tank.reloadTime * this.barrelEntity.definition.reload;
+        const reloadTime = Math.ceil(this.barrelEntity.tank.reloadTime * this.barrelEntity.definition.reload);
         if (reloadTime !== this.reloadTime) {
             this.pos *= reloadTime / this.reloadTime;
             this.reloadTime = reloadTime;

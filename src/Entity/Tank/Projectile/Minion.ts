@@ -42,7 +42,7 @@ import { CameraEntity } from "../../../Native/Camera";
     bullet: {
         type: "bullet",
         health: 0.4,
-        damage: 0.4,
+        damage: 0.375, //Originally 0.4
         speed: 0.8,
         scatterRate: 1,
         lifeLength: 1,
