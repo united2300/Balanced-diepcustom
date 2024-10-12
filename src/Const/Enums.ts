@@ -127,7 +127,8 @@ export const enum Tank {
     Skimmer       = 54,
     Rocketeer     = 55,
     MegaSmasher   = 56,
-    Ambusher      = 57
+    Ambusher      = 57,
+    LampsNecro    = 58
 }
 
 /**
