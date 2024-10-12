@@ -200,7 +200,10 @@ export default class TankBody extends LivingEntity implements BarrelBase {
                 }
 
                 const sunchip = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
+                // how the fuck do i put an if statement here what
+                if (this._currentTank === Tank.LampsNecro) {
                 const sunchip2 = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
+                }
             }
         }
     }
