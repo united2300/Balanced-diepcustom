@@ -306,7 +306,7 @@ export default class TankBody extends LivingEntity implements BarrelBase {
         updateStats: {
             // Damage
             this.damagePerTick = this.cameraEntity.cameraData.statLevels[Stat.BodyDamage] * 4 + 20;
-            if (this._currentTank === Tank.Spike) this.damagePerTick += 8.5;
+            if (this._currentTank === Tank.Spike) this.damagePerTick += 9;
 
             // Max Health
             const maxHealthCache = this.healthData.values.maxHealth;
