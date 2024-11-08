@@ -24,6 +24,7 @@ import { TankDefinition } from "../../../Const/TankDefinitions";
 import { Entity } from "../../../Native/Entity";
 import { AI, AIState } from "../../AI";
 import { BarrelBase } from "../TankBody";
+import { Tank } from "../../../Const/Enums";
 
 /**
  * The drone class represents the drone (projectile) entity in diep.

@@ -38,6 +38,7 @@ import CrocSkimmer from "./Projectile/CrocSkimmer";
 import { BarrelAddon, BarrelAddonById } from "./BarrelAddons";
 import { Swarm } from "./Projectile/Swarm";
 import NecromancerSquare from "./Projectile/NecromancerSquare";
+import Glider from "./Projectile/Glider";
 /**
  * Class that determines when barrels can shoot, and when they can't.
  */
@@ -196,6 +197,9 @@ export default class Barrel extends ObjectEntity {
                 break;
             case 'flame':
                 new Flame(this, this.tank, tankDefinition, angle);
+                break;
+            case 'Glider':
+                new Glider(this, this.tank, tankDefinition, angle);
                 break;
             case 'wall': {
                 let w = new MazeWall(this.game, Math.round(this.tank.inputs.mouse.x / 50) * 50, Math.round(this.tank.inputs.mouse.y / 50) * 50, 250, 250);

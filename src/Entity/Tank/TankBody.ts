@@ -200,10 +200,7 @@ export default class TankBody extends LivingEntity implements BarrelBase {
                 }
 
                 const sunchip = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
-                // how the fuck do i put an if statement here what
-                if (this._currentTank === Tank.LampsNecro) {
                 const sunchip2 = NecromancerSquare.fromShape(barrelToShoot, this, this.definition, entity);
-                }
             }
         }
     }
@@ -288,8 +285,8 @@ export default class TankBody extends LivingEntity implements BarrelBase {
         if (this.definition.flags.zoomAbility && (this.inputs.flags & InputFlags.rightclick)) {
             if (!(this.cameraEntity.cameraData.values.flags & CameraFlags.usesCameraCoords)) {
                 const angle = Math.atan2(this.inputs.mouse.y - this.positionData.values.y, this.inputs.mouse.x - this.positionData.values.x)
-                this.cameraEntity.cameraData.cameraX = Math.cos(angle) * 1000 + this.positionData.values.x;
-                this.cameraEntity.cameraData.cameraY = Math.sin(angle) * 1000 + this.positionData.values.y;
+                this.cameraEntity.cameraData.cameraX = Math.cos(angle) * 1500 + this.positionData.values.x;
+                this.cameraEntity.cameraData.cameraY = Math.sin(angle) * 1500 + this.positionData.values.y;
                 this.cameraEntity.cameraData.flags |= CameraFlags.usesCameraCoords;
             }
         } else if (this.cameraEntity.cameraData.values.flags & CameraFlags.usesCameraCoords) this.cameraEntity.cameraData.flags ^= CameraFlags.usesCameraCoords;

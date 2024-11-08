@@ -120,7 +120,7 @@ const AutoTurretMiniDefinition: BarrelDefinition = {
     width: 42 * 0.7,
     delay: 0.01,
     reload: 1,
-    recoil: 0.3,
+    recoil: 0.35,
     isTrapezoid: false,
     trapezoidDirection: 0,
     addon: null,
@@ -128,7 +128,7 @@ const AutoTurretMiniDefinition: BarrelDefinition = {
         type: "bullet",
         health: 1,
         damage: 0.4,
-        speed: 1.2,
+        speed: 1.25,
         scatterRate: 1,
         lifeLength: 1,
         sizeRatio: 1,
@@ -269,6 +269,40 @@ class LauncherAddon extends Addon {
         }
     }
 }
+
+/** The thing underneath Glider addon. */
+class LauncherGAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const launcher = new ObjectEntity(this.game);
+        const sizeRatio = 65.5 * Math.SQRT2 / 50;
+        const widthRatio = 33.6 / 50;
+        const size = this.owner.physicsData.values.size;
+
+        launcher.setParent(this.owner);
+        launcher.relationsData.values.owner = this.owner;
+        launcher.relationsData.values.team = this.owner.relationsData.values.team;
+
+        launcher.physicsData.values.size = sizeRatio * size;
+        launcher.physicsData.values.width = widthRatio * size;
+        launcher.positionData.values.x = launcher.physicsData.values.size / 2;
+        launcher.positionData.values.angle = Math.PI;
+
+        launcher.styleData.values.color = Color.Barrel;
+        launcher.physicsData.values.flags |= PhysicsFlags.isTrapezoid;
+        launcher.physicsData.values.sides = 2;
+
+        launcher.tick = () => {
+            const size = this.owner.physicsData.values.size;
+
+            launcher.physicsData.size = sizeRatio * size;
+            launcher.physicsData.width = widthRatio * size;
+            launcher.positionData.x = launcher.physicsData.values.size / 2;
+        }
+    }
+}
+
 /** Centered Auto Turret addon. */
 class AutoTurretAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -460,4 +494,5 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     auto2: Auto2Addon,
     autorocket: AutoRocketAddon,
     spiesk: SpieskAddon,
+    glider: LauncherGAddon,
 }

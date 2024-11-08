@@ -160,22 +160,34 @@ export class AI {
 
             if (entity.physicsData.values.flags & PhysicsFlags.isBase) continue; // Check if the target is a base
 
+            if (entity.styleData.opacity < 0.5) continue;
+
             if (!(entity.relationsData.values.owner === null || !(entity.relationsData.values.owner instanceof ObjectEntity))) continue; // Don't target entities who have an object owner
 
             if (entity.relationsData.values.team === team || entity.physicsData.values.sides === 0) continue;
 
             if (!this.targetFilter(entity.positionData.values)) continue; // Custom check
 
+            //added
             const distSq = (entity.positionData.values.x - rootPos.x) ** 2 + (entity.positionData.values.y - rootPos.y) ** 2;
 
-            if (distSq < closestDistSq) {
-                closestEntity = entity;
-                closestDistSq = distSq;
+            if (entity instanceof TankBody) {
+                    closestEntity = entity;
+                    closestDistSq = this.viewRange;
+            } else {
+                if (distSq < closestDistSq) {
+                    if (entity instanceof TankBody) {
+                        closestEntity = entity;
+                        closestDistSq = this.viewRange;
+                    } else if (distSq < closestDistSq) {
+                        closestEntity = entity;
+                        closestDistSq = distSq;
+                    }
+                }
             }
         }
-
-        return this.target = closestEntity;
-    }
+    return this.target = closestEntity;
+}
 
     /** Aims and predicts at the target. */
     public aimAt(target: ObjectEntity) {
@@ -250,7 +262,7 @@ export class AI {
 
         const target = this.findTarget(tick);
         
-        if (!target) {
+        if (!target || target.styleData.opacity < 0.25) {
             this.inputs.flags = 0;
             this.state = AIState.idle;
             const angle = this.inputs.mouse.angle + this.passiveRotation;
