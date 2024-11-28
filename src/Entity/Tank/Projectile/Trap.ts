@@ -46,6 +46,10 @@ export default class Trap extends Bullet {
         this.styleData.values.flags &= ~StyleFlags.hasNoDmgIndicator;
 
         this.collisionEnd = this.lifeLength >> 3;
+
+        this.pierceEffect = false;
+
+        this.pierceEffect = false;
         this.lifeLength = (600 * barrel.definition.bullet.lifeLength) >> 3;
         if (tankDefinition && tankDefinition.id === DevTank.Bouncy) this.collisionEnd = this.lifeLength - 1;
         

@@ -73,6 +73,8 @@ export default class Glider extends Bullet implements BarrelBase {
 
         const gliderBarrels: Barrel[] = this.gliderBarrels = [];
 
+        this.pierceEffect = false;
+
         const s1 = new Barrel(this, { ...GliderBarrelDefinition });
         const s2Definition = { ...GliderBarrelDefinition };
         s2Definition.angle += Math.PI / 2.571428571

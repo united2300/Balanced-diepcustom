@@ -79,6 +79,8 @@ export default class Skimmer extends Bullet implements BarrelBase {
 
         this.cameraEntity = tank.cameraEntity;
 
+        this.pierceEffect = false;
+
         const skimmerBarrels: Barrel[] = this.skimmerBarrels =[];
 
         const s1 = new class extends Barrel {

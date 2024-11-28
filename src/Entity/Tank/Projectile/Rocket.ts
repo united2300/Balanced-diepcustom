@@ -67,9 +67,12 @@ export default class Rocket extends Bullet implements BarrelBase {
 
 
     public constructor(barrel: Barrel, tank: BarrelBase, tankDefinition: TankDefinition | null, shootAngle: number) {
+
         super(barrel, tank, tankDefinition, shootAngle);
         
         this.cameraEntity = tank.cameraEntity;
+
+        this.pierceEffect = false;
 
         const rocketBarrel = this.rocketBarrel = new Barrel(this, {...RocketBarrelDefinition});
         rocketBarrel.styleData.values.color = this.styleData.values.color;

@@ -31,6 +31,7 @@ export class Swarm extends Drone {
         this.ai.viewRange = 1000 * tank.sizeFactor * 2;
         this.physicsData.values.flags |= PhysicsFlags.noOwnTeamCollision | PhysicsFlags.canEscapeArena;
         this.physicsData.values.pushFactor = 1;
+        this.pierceEffect = true;
     }
 
     // TODO:

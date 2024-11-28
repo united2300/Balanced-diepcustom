@@ -42,12 +42,15 @@ export default class Drone extends Bullet {
     /** Cached prop of the definition. */
     protected canControlDrones: boolean;
 
+
     public constructor(barrel: Barrel, tank: BarrelBase, tankDefinition: TankDefinition | null, shootAngle: number) {
         super(barrel, tank, tankDefinition, shootAngle);
 
         const bulletDefinition = barrel.definition.bullet;
 
         this.usePosAngle = true;
+
+        this.pierceEffect = true;
         
         this.ai = new AI(this);
         this.ai.viewRange = 850 * tank.sizeFactor;

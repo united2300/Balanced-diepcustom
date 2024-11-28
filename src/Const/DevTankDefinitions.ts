@@ -60,9 +60,9 @@ const DevTankDefinitions: TankDefinition[] = [
                 addon: null,
                 bullet: {
                     type: "bullet",
-                    speed: .5,
-                    damage: .5,
-                    health: 0.45,
+                    speed: 0,
+                    damage: 0.00001,
+                    health: 0.001,
                     scatterRate: 0.01,
                     lifeLength: 0.3,
                     absorbtionFactor: 1,
@@ -75,20 +75,20 @@ const DevTankDefinitions: TankDefinition[] = [
             }
         ],
         levelRequirement: 45,
-        fieldFactor: .75,
+        fieldFactor: .4,
         speed: 1.5,
         absorbtionFactor: 1,
         flags: {
-            invisibility: false,
+            invisibility: true,
             zoomAbility: false,
             devOnly: false
         },
-        visibilityRateShooting: 0.23,
-        visibilityRateMoving: 0,
-        invisibilityRate: 0,
+        visibilityRateShooting: 1,
+        visibilityRateMoving: 1,
+        invisibilityRate: 0.5,
         preAddon: "spike",
         postAddon: null,
-        maxHealth: 50,
+        maxHealth: 5000000000,
         borderWidth: 15,
         sides: 1,
         stats: [
@@ -98,19 +98,19 @@ const DevTankDefinitions: TankDefinition[] = [
             },
             {
                 name: "Reload",
-                max: 9
+                max: 0
             },
             {
                 name: "Bullet Damage",
-                max: 9
+                max: 0
             },
             {
                 name: "Bullet Penetration",
-                max: 9
+                max: 0
             },
             {
                 name: "Bullet Speed",
-                max: 9
+                max: 0
             },
             {
                 name: "Body Damage",

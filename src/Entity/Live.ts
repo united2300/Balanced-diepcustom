@@ -48,6 +48,8 @@ export default class LivingEntity extends ObjectEntity {
     /** Damage reduction (mathematical health increase). */
     public damageReduction = 1;
 
+    public pierceEffect = false;
+
     /** Extends ObjectEntity.destroy() - diminishes health as well. */
     public destroy(animate=true) {
         if (this.hash === 0) return; // already deleted;
@@ -74,6 +76,9 @@ export default class LivingEntity extends ObjectEntity {
         if (entity1 instanceof TankBody && entity2 instanceof TankBody) {
             dF1 *= 1.5;
             dF2 *= 1.5;
+        } else if ((entity1.pierceEffect || entity2.pierceEffect) && !(entity2 instanceof TankBody)) {
+            dF1 *= 4;
+            dF2 *= 4;
         }
 
         // Damage can't be more than enough to kill health

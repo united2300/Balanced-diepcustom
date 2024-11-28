@@ -33,6 +33,7 @@ export default class Flame extends Bullet {
         this.physicsData.values.sides = 4;
         this.physicsData.values.absorbtionFactor = this.physicsData.values.pushFactor = 0;
         this.lifeLength = 25 * barrel.definition.bullet.lifeLength;
+        this.pierceEffect = false;
     }
 
     public destroy(animate?: boolean): void {

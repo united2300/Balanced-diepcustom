@@ -53,8 +53,10 @@ export default class Bullet extends LivingEntity {
         super(barrel.game);
 
         this.tank = tank;
-        
+
         this.tankDefinition = tankDefinition;
+
+        this.pierceEffect = false;
 
         // if (barrel.definition.bullet.type === "drone") throw new TypeError("Invalid bullet type for this class");
         this.movementAngle = shootAngle;

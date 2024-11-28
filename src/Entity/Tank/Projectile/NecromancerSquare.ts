@@ -34,6 +34,8 @@ export default class NecromancerSquare extends Drone {
         super(barrel, tank, tankDefinition, shootAngle);
 
         const bulletDefinition = barrel.definition.bullet;
+
+        this.pierceEffect = false;
         
         this.ai = new AI(this);
         this.ai.viewRange = 900;
