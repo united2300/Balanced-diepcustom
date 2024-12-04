@@ -28,13 +28,14 @@ export type preAddonId = "dombase" | "launcher"
 export type addonId = preAddonId | postAddonId;
 
 /** The types of projectiles in the game */
-export type projectileId = "bullet" | "drone" | "trap" | "necrodrone" | "minion" | "skimmer" | "rocket" | "swarm" | "flame" | "wall" | "croc" | "jailbreak" | "Glider";
+export type projectileId = "bullet" | "drone" | "trap" | "necrodrone" | "minion" | "skimmer" | "rocket" | "swarm" | "flame" | "wall" | "croc" | "jailbreak" | "Glider" | "LauncherRocket";
 
 /** The types of barrel addons that exist in the game */
 export type barrelAddonId = "trapLauncher" | "purplebarrel";
 
 /** Increase in opacity when taking damage. */
-export const visibilityRateDamage = 0.2;
+//export const visibilityRateDamage = 0.2; // DEFAULT
+export const visibilityRateDamage = 0.03;
 
 /**
  * Format that the game stores bullet definitions in its memory.

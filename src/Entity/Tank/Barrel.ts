@@ -27,6 +27,7 @@ import Minion from "./Projectile/Minion";
 import JailbreakProjectile from "./Projectile/Jailbreaker";
 import ObjectEntity from "../Object";
 import TankBody, { BarrelBase } from "./TankBody";
+import LauncherRocket from "./Projectile/LauncherRocket"
 
 import { Color, PositionFlags, PhysicsFlags, BarrelFlags, Stat, Tank } from "../../Const/Enums";
 import { BarrelGroup } from "../../Native/FieldGroups";
@@ -213,6 +214,9 @@ export default class Barrel extends ObjectEntity {
                 break;
             case "jailbreak": 
                 new JailbreakProjectile(this, this.tank, tankDefinition, angle);
+                break;
+            case "LauncherRocket": 
+                new LauncherRocket(this, this.tank, tankDefinition, angle);
                 break;
             default:
                 util.log('Ignoring attempt to spawn projectile of type ' + this.definition.bullet.type);

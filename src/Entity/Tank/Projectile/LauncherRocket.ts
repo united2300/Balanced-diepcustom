@@ -28,14 +28,14 @@ import { CameraEntity } from "../../../Native/Camera";
 /**
  * Barrel definition for the rocketeer rocket's barrel.
  */
-const RocketBarrelDefinition: BarrelDefinition = {
+const LauncherRocketBarrelDefinition: BarrelDefinition = {
     angle: Math.PI,
     offset: 0,
     size: 70,
     width: 72,
     delay: 0,
-    reload: 0.2,
-    recoil: 0.25,
+    reload: 0.4,
+    recoil: 3.3,
     isTrapezoid: true,
     trapezoidDirection: 0,
     addon: null,
@@ -44,7 +44,7 @@ const RocketBarrelDefinition: BarrelDefinition = {
         health: 0.3,
         damage: 3 / 5,
         speed: 1.5,
-        scatterRate: 5,
+        scatterRate: 1,
         lifeLength: 0.1,
         sizeRatio: 1,
         absorbtionFactor: 1
@@ -54,7 +54,7 @@ const RocketBarrelDefinition: BarrelDefinition = {
 /**
  * Represents all rocketeer rockets in game.
  */
-export default class Rocket extends Bullet implements BarrelBase {
+export default class LauncherRocket extends Bullet implements BarrelBase {
     /** The rocket's barrel */
     private rocketBarrel: Barrel;
 
@@ -74,7 +74,7 @@ export default class Rocket extends Bullet implements BarrelBase {
 
         this.pierceEffect = false;
 
-        const rocketBarrel = this.rocketBarrel = new Barrel(this, {...RocketBarrelDefinition});
+        const rocketBarrel = this.rocketBarrel = new Barrel(this, {...LauncherRocketBarrelDefinition});
         rocketBarrel.styleData.values.color = this.styleData.values.color;
     }
 
@@ -84,7 +84,7 @@ export default class Rocket extends Bullet implements BarrelBase {
 
     public tick(tick: number) {
         this.reloadTime = this.tank.reloadTime;
-        if (!this.deletionAnimation && this.rocketBarrel) this.rocketBarrel.definition.width = ((this.barrelEntity.definition.width / 2) * RocketBarrelDefinition.width) / this.physicsData.values.size;
+        if (!this.deletionAnimation && this.rocketBarrel) this.rocketBarrel.definition.width = ((this.barrelEntity.definition.width / 2) * LauncherRocketBarrelDefinition.width) / this.physicsData.values.size;
 
         super.tick(tick);
 

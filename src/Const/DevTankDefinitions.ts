@@ -75,11 +75,11 @@ const DevTankDefinitions: TankDefinition[] = [
             }
         ],
         levelRequirement: 45,
-        fieldFactor: .4,
+        fieldFactor: .2,
         speed: 1.5,
         absorbtionFactor: 1,
         flags: {
-            invisibility: true,
+            invisibility: false,
             zoomAbility: false,
             devOnly: false
         },
@@ -88,7 +88,7 @@ const DevTankDefinitions: TankDefinition[] = [
         invisibilityRate: 0.5,
         preAddon: "spike",
         postAddon: null,
-        maxHealth: 5000000000,
+        maxHealth: 500,
         borderWidth: 15,
         sides: 1,
         stats: [
