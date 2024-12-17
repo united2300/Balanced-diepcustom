@@ -29,12 +29,12 @@ import { CameraEntity } from "../../../Native/Camera";
  * Barrel definition for the glider's barrel.
  */
 const GliderBarrelDefinition: BarrelDefinition = {
-    angle: Math.PI / 1.24137931,
+    angle: Math.PI - 5 / 25 * Math.PI,
     offset: 0,
     size: 70,
-    width: 42,
-    delay: 0,
-    reload: 0.7,
+    width: 37.8,
+    delay: 0.5,
+    reload: 0.75,
     recoil: 3.8,
     isTrapezoid: false,
     trapezoidDirection: 0,
@@ -42,8 +42,8 @@ const GliderBarrelDefinition: BarrelDefinition = {
     bullet: {
         type: "bullet",
         health: 0.6,
-        damage: 3 / 5,
-        speed: 0.5,
+        damage: 0.6,
+        speed: 0.7,
         scatterRate: 1,
         lifeLength: 0.5,
         sizeRatio: 1,

@@ -34,8 +34,8 @@ const LauncherRocketBarrelDefinition: BarrelDefinition = {
     size: 70,
     width: 72,
     delay: 0,
-    reload: 0.4,
-    recoil: 3.3,
+    reload: 0.3,
+    recoil: 3.333,
     isTrapezoid: true,
     trapezoidDirection: 0,
     addon: null,
@@ -45,7 +45,7 @@ const LauncherRocketBarrelDefinition: BarrelDefinition = {
         damage: 3 / 5,
         speed: 1.5,
         scatterRate: 1,
-        lifeLength: 0.1,
+        lifeLength: 0.175,
         sizeRatio: 1,
         absorbtionFactor: 1
     }
