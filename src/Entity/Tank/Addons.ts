@@ -63,7 +63,11 @@ export class Addon {
      * `createAutoTurrets` method builds `count` auto turrets around the current
      * tank's body. 
      */
-    protected createAutoTurrets(count: number) {
+    /**
+     * `createAutoTurrets` method builds `count` auto turrets around the current
+     * tank's body. 
+     */
+    protected createAutoTurrets(count: number, turret: BarrelDefinition) {
         const rotPerTick = AI.PASSIVE_ROTATION;
         const MAX_ANGLE_RANGE = PI2 / 4; // keep within 90º each side
 
@@ -75,7 +79,7 @@ export class Addon {
         if (rotator.styleData.values.flags & StyleFlags.isVisible) rotator.styleData.values.flags ^= StyleFlags.isVisible;
 
         for (let i = 0; i < count; ++i) {
-            const base = new AutoTurret(rotator, AutoTurretMiniDefinition);
+            const base = new AutoTurret(rotator, turret);
             base.influencedByOwnerInputs = true;
 
             const angle = base.ai.inputs.mouse.angle = PI2 * (i / count);
@@ -129,6 +133,29 @@ const AutoTurretMiniDefinition: BarrelDefinition = {
         health: 1,
         damage: 0.4,
         speed: 1.25,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
+    }
+};
+
+const AutoTurretMiniSniperDefinition: BarrelDefinition = {
+    angle: 0,
+    offset: 0,
+    size: 65,
+    width: 42 * 0.7,
+    delay: 0.01,
+    reload: 1.5,
+    recoil: 0.45,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 0.5,
+        speed: 1.4,
         scatterRate: 1,
         lifeLength: 1,
         sizeRatio: 1,
@@ -326,7 +353,7 @@ class Auto5Addon extends Addon {
     public constructor(owner: BarrelBase) {
         super(owner);
 
-        this.createAutoTurrets(5);
+        this.createAutoTurrets(5, AutoTurretMiniDefinition);
     }
 }
 /** 3 Auto Turrets */
@@ -334,9 +361,19 @@ class Auto3Addon extends Addon {
     public constructor(owner: BarrelBase) {
         super(owner);
 
-        this.createAutoTurrets(3);
+        this.createAutoTurrets(3, AutoTurretMiniDefinition);
     }
 }
+
+class AutoSni4Addon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        this.createAutoTurrets(4,AutoTurretMiniSniperDefinition);
+    }
+}
+
+
 /** The thing above ranger's barrel. */
 class PronouncedAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -417,7 +454,7 @@ class Auto2Addon extends Addon {
     public constructor(owner: BarrelBase) {
         super(owner);
 
-        this.createAutoTurrets(2);
+        this.createAutoTurrets(2, AutoTurretMiniDefinition);
     }
 }
 /** 7 Auto Turrets */
@@ -425,7 +462,7 @@ class Auto7Addon extends Addon {
     public constructor(owner: BarrelBase) {
         super(owner);
 
-        this.createAutoTurrets(7);
+        this.createAutoTurrets(7, AutoTurretMiniDefinition);
     }
 }
 
@@ -495,4 +532,5 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     autorocket: AutoRocketAddon,
     spiesk: SpieskAddon,
     glider: LauncherGAddon,
+    autoSni4Addon: AutoSni4Addon,
 }
