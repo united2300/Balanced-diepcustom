@@ -19,7 +19,7 @@
 import Barrel from "../Barrel";
 import Bullet from "./Bullet";
 
-import { PhysicsFlags, Stat, StyleFlags } from "../../../Const/Enums";
+import { PhysicsFlags, Stat, StyleFlags, Tank } from "../../../Const/Enums";
 import { TankDefinition } from "../../../Const/TankDefinitions";
 import { BarrelBase } from "../TankBody";
 import { DevTank } from "../../../Const/DevTankDefinitions";
@@ -41,6 +41,7 @@ export default class Trap extends Bullet {
 
         //this.baseSpeed = (barrel.bulletAccel / 2) + 30 - Math.random() * barrel.definition.bullet.scatterRate;
         this.baseSpeed = 36 + (BulletSpeed * 5.4) + (Math.floor(Math.random() * 1.8 + 0) - Math.floor(Math.random() * 1.8 + 0))
+        if (tankDefinition && tankDefinition.id === Tank.MegaTrapper) this.baseSpeed = 36 + (BulletSpeed * 5.4) + (Math.floor(Math.random() * 1.8 + 0) - Math.floor(Math.random() * 1.8 + 0)) + 25
         this.baseAccel = 0;
         this.physicsData.values.sides = bulletDefinition.sides ?? 3;
         if (this.physicsData.values.flags & PhysicsFlags.noOwnTeamCollision) this.physicsData.values.flags ^= PhysicsFlags.noOwnTeamCollision;

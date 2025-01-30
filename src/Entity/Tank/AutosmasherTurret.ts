@@ -34,16 +34,16 @@ export const AutoTurretDefinition: BarrelDefinition = {
     size: 55,
     width: 42 * 0.7,
     delay: 0.01,
-    reload: 1,
+    reload: 1.15,
     recoil: 0.3,
     isTrapezoid: false,
     trapezoidDirection: 0,
     addon: null,
     bullet: {
         type: "bullet",
-        health: 1,
-        damage: 0.3,
-        speed: 1.2,
+        health: 1.1,
+        damage: 1.05,
+        speed: 1.3,
         scatterRate: 1,
         lifeLength: 1,
         sizeRatio: 1,
@@ -54,7 +54,7 @@ export const AutoTurretDefinition: BarrelDefinition = {
 /**
  * Auto Turret Barrel + Barrel Base
  */
-export default class AutoTurret extends ObjectEntity {
+export default class AutosmasherTurret extends ObjectEntity {
     // TODO(ABC):
     // Maybe just remove this
     /** For mounted turret name to show up on Auto Turrets. */
@@ -145,7 +145,7 @@ export default class AutoTurret extends ObjectEntity {
         if (!useAI) {
             const {x, y} = this.getWorldPosition();
             let flip = this.owner.inputs.attemptingRepel() ? -1 : 1;
-            const deltaPos = {x: (this.owner.inputs.mouse.x - x) * flip, y: (this.owner.inputs.mouse.y - y) * flip}
+            const deltaPos = {x: (this.owner.inputs.mouse.x - x ) * flip, y: (this.owner.inputs.mouse.y - y) * flip}
 
             if (this.ai.targetFilter({x: x + deltaPos.x, y: y + deltaPos.y}) === false) useAI = true;
             else {

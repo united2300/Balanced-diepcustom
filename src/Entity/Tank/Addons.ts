@@ -19,6 +19,7 @@
 import GameServer from "../../Game";
 import ObjectEntity from "../Object";
 import AutoTurret from "./AutoTurret";
+import AutosmasherTurret from "./AutosmasherTurret"
 
 import { Color, PositionFlags, PhysicsFlags, StyleFlags } from "../../Const/Enums";
 import { BarrelBase } from "./TankBody";
@@ -155,9 +156,9 @@ const AutoTurretMiniSniperDefinition: BarrelDefinition = {
         type: "bullet",
         health: 1,
         damage: 0.5,
-        speed: 1.4,
+        speed: 1.45,
         scatterRate: 1,
-        lifeLength: 1,
+        lifeLength: 0.75,
         sizeRatio: 1,
         absorbtionFactor: 1
     }
@@ -345,7 +346,7 @@ class AutoSmasherAddon extends Addon {
         super(owner);
 
         this.createGuard(6, 1.15, 0, .1);
-        new AutoTurret(owner);
+        new AutosmasherTurret(owner);
     }
 }
 /** 5 Auto Turrets */
@@ -372,7 +373,6 @@ class AutoSni4Addon extends Addon {
         this.createAutoTurrets(4,AutoTurretMiniSniperDefinition);
     }
 }
-
 
 /** The thing above ranger's barrel. */
 class PronouncedAddon extends Addon {

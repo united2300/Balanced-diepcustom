@@ -234,7 +234,7 @@ export class AI {
             if (entPerpComponent < movementSpeed * -0.9) entPerpComponent = movementSpeed * -0.9;
 
             const directComponent = Math.sqrt(movementSpeed ** 2 - entPerpComponent ** 2);
-            const offset = (entPerpComponent / directComponent * dist) / 2;
+            const offset = (entPerpComponent / directComponent * dist) / 1;
 
             this.inputs.mouse.set({
                 x: pos.x + offset * unitDistancePerp.x,

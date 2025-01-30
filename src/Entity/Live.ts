@@ -24,7 +24,11 @@ import TankBody from "./Tank/TankBody";
 import { visibilityRateDamage } from "../Const/TankDefinitions";
 import { StyleFlags, Tank } from "../Const/Enums";
 import { HealthGroup } from "../Native/FieldGroups";
+import { TankDefinition } from "../Const/TankDefinitions";
+import { getTankById } from "../Const/TankDefinitions";
+import TankDefinitions from "../Const/TankDefinitions";
 import Drone from "./Tank/Projectile/Drone";
+import { PI2 } from "../util";
 
 /**
  * An Abstract class for all entities with health.
@@ -58,6 +62,7 @@ export default class LivingEntity extends ObjectEntity {
 
         super.destroy(animate);
     }
+
 
     /** Applies damage to two entity after colliding with eachother. */
     protected static applyDamage(entity1: LivingEntity, entity2: LivingEntity) {
@@ -158,6 +163,7 @@ export default class LivingEntity extends ObjectEntity {
         }
 
         // Regeneration
+
         if (this.healthData.values.health < this.healthData.values.maxHealth) {
             this.healthData.health += this.regenPerTick;
 

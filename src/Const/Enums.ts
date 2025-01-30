@@ -131,7 +131,10 @@ export const enum Tank {
     Glider        = 58,
     Terminator    = 59,
     Autotank      = 60,
-    Ruffian       = 61
+    Ruffian       = 61,
+    Director      = 64,
+    XSniper       = 65
+
 }
 
 /**
@@ -214,7 +217,7 @@ export const enum InputFlags {
  */
 export const enum ArenaFlags {
     noJoining        = 1 << 0,
-    showsLeaderArrow = 1 << 1,
+    showsLeaderArrow = 0 << 1,
     hiddenScores     = 1 << 2,
     gameReadyStart   = 1 << 3,
     canUseCheats     = 1 << 4

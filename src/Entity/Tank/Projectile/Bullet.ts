@@ -19,7 +19,7 @@
 import LivingEntity from "../../Live";
 import Barrel from "../Barrel";
 
-import { HealthFlags, PositionFlags, PhysicsFlags, Stat, StyleFlags } from "../../../Const/Enums";
+import { HealthFlags, PositionFlags, PhysicsFlags, Stat, StyleFlags, Tank } from "../../../Const/Enums";
 import { TankDefinition } from "../../../Const/TankDefinitions";
 import { BarrelBase } from "../TankBody";
 import { EntityStateFlags } from "../../../Native/Entity";
@@ -92,6 +92,7 @@ export default class Bullet extends LivingEntity {
         this.baseSpeed = barrel.bulletAccel + 30 - Math.random() * bulletDefinition.scatterRate;
 
         this.healthData.values.health = this.healthData.values.maxHealth = (1.5 * bulletPenetration + 2) * bulletDefinition.health;
+
         this.damagePerTick = (7 + bulletDamage * 3) * bulletDefinition.damage;
         this.damageReduction = 0.25;
 

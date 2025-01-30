@@ -319,7 +319,30 @@ export default class TankBody extends LivingEntity implements BarrelBase {
             }
 
             // Regen
-            this.regenPerTick = (this.healthData.values.maxHealth * 4 * this.cameraEntity.cameraData.values.statLevels.values[Stat.HealthRegen] + this.healthData.values.maxHealth) / 25000;
+            // fixed your nice code
+            let rMod = 24000;
+            // switch case to this because my eyes couldnt hold the if statements
+            switch (this.currentTank) {
+                case Tank.Smasher:
+                case Tank.MegaSmasher:
+                case Tank.Spike:
+                case Tank.Landmine:
+                case Tank.AutoSmasher:
+                    rMod = 22000;
+                break;
+            }
+            // i believe this is a healthmulti
+            const healthRegenStat = this.cameraEntity.cameraData.values.statLevels.values[Stat.HealthRegen];
+            // actual regenmulti
+            const regenMult = healthRegenStat > 0 ? 1.1 - (healthRegenStat / 10) : 0;
+            // regenpertick
+            this.regenPerTick = (this.healthData.values.maxHealth * (4 * (healthRegenStat + (1 - this.styleData.values.opacity) + regenMult) + 1)) / rMod;
+
+            //lamps
+            //this.regenPerTick = (this.healthData.values.maxHealth * (4 * (healthRegenStat + (1 - this.styleData.values.opacity) * 2 + regenMult) + 1)) / rMod;
+            
+            //base
+            //this.regenPerTick = (this.healthData.values.maxHealth * 4 * this.cameraEntity.cameraData.values.statLevels.values[Stat.HealthRegen] + this.healthData.values.maxHealth) / 25000;
 
             // Reload
             this.reloadTime = 15 * Math.pow(0.914, this.cameraEntity.cameraData.values.statLevels.values[Stat.Reload]);
@@ -339,10 +362,12 @@ export default class TankBody extends LivingEntity implements BarrelBase {
         } else if (this.definition.flags.displayAsStar === true) this.styleData.flags |= StyleFlags.isStar;
 
 
+
         this.accel.add({
             x: this.inputs.movement.x * this.cameraEntity.cameraData.values.movementSpeed,
             y: this.inputs.movement.y * this.cameraEntity.cameraData.values.movementSpeed
         });
+
 
         this.inputs.movement.set({
             x: 0,
