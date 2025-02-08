@@ -4416,7 +4416,7 @@
                     "speed": 2,
                     "scatterRate": 1,
                     "lifeLength": 10,
-                    "absorbtionFactor": 0.1
+                    "absorbtionFactor": 0.75
                 }
             }
         ],
