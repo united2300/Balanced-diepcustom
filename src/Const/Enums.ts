@@ -132,6 +132,7 @@ export const enum Tank {
     Terminator    = 59,
     Autotank      = 60,
     Ruffian       = 61,
+    Auto_sni_4    = 63,
     Director      = 64,
     XSniper       = 65
 

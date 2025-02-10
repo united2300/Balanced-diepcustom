@@ -58,13 +58,24 @@ export default class Teams2Arena extends ArenaEntity {
 
     public spawnPlayer(tank: TankBody, client: Client) {
         tank.positionData.values.y = 2 * arenaSize * Math.random() - arenaSize;
-
         const xOffset = (Math.random() - 0.5) * baseWidth;
-        
-        const base = this.playerTeamMap.get(client) || [this.blueTeamBase, this.redTeamBase][0|Math.random()*2];
+
+        const entities = this.game.entities.inner.slice(0, this.game.entities.lastId)
+            .filter(e => e instanceof TankBody)
+            .map(e => e?.relationsData ? e.relationsData.values.team : null);
+
+        const red = entities.filter(team => team === this.redTeamBase).length;
+        const blue = entities.filter(team => team === this.blueTeamBase).length;
+
+        const base = this.playerTeamMap.get(client) ||
+            (red === blue
+                ? [this.blueTeamBase, this.redTeamBase][Math.random() * 2 | 0]
+                : (red < blue ? this.redTeamBase : this.blueTeamBase));
+
         tank.relationsData.values.team = base.relationsData.values.team;
         tank.styleData.values.color = base.styleData.values.color;
         tank.positionData.values.x = base.positionData.values.x + xOffset;
+
         this.playerTeamMap.set(client, base);
 
         if (client.camera) client.camera.relationsData.team = tank.relationsData.values.team;
