@@ -16,6 +16,12 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
+import Cshotgun from "../Entity/Tank/Projectile/cshotgun";
+import Pshotgun from "../Entity/Tank/Projectile/pshotgun";
+import Shotgun3 from "../Entity/Tank/Projectile/shotgun3";
+import ShotPellet from "../Entity/Tank/Projectile/shotpellet";
+import ShotPellet2 from "../Entity/Tank/Projectile/shotpellet2";
+import ShotPellet3 from "../Entity/Tank/Projectile/shotpellet3";
 import DevTankDefinitions, { DevTank } from "./DevTankDefinitions";
 import { Tank, Color } from "./Enums";
 import _TankDefinitions from "./TankDefinitions.json";
@@ -28,7 +34,7 @@ export type preAddonId = "dombase" | "launcher"
 export type addonId = preAddonId | postAddonId;
 
 /** The types of projectiles in the game */
-export type projectileId = "bullet" | "drone" | "trap" | "necrodrone" | "minion" | "skimmer" | "rocket" | "swarm" | "flame" | "wall" | "croc" | "jailbreak" | "Glider" | "LauncherRocket";
+export type projectileId = "bullet" | "drone" | "trap" | "necrodrone" | "minion" | "skimmer" | "rocket" | "swarm" | "flame" | "wall" | "croc" | "jailbreak" | "Glider" | "LauncherRocket" | "ShotPellet" | "ShotPellet2" | "ShotPellet3" | "Cshotgun" | "Shotgun3" | "Pshotgun";
 
 /** The types of barrel addons that exist in the game */
 export type barrelAddonId = "trapLauncher" | "purplebarrel";

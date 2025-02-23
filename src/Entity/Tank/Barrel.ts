@@ -40,6 +40,14 @@ import { BarrelAddon, BarrelAddonById } from "./BarrelAddons";
 import { Swarm } from "./Projectile/Swarm";
 import NecromancerSquare from "./Projectile/NecromancerSquare";
 import Glider from "./Projectile/Glider";
+
+import ShotPellet from "./Projectile/shotpellet";
+import ShotPellet2 from "./Projectile/shotpellet2";
+import ShotPellet3 from "./Projectile/shotpellet3";
+import Shotgun3 from "./Projectile/shotgun3";
+import Cshotgun from "./Projectile/cshotgun";
+import Pshotgun from "./Projectile/pshotgun";
+
 /**
  * Class that determines when barrels can shoot, and when they can't.
  */
@@ -218,6 +226,48 @@ export default class Barrel extends ObjectEntity {
             case "LauncherRocket": 
                 new LauncherRocket(this, this.tank, tankDefinition, angle);
                 break;
+            case 'ShotPellet': {
+                for (let i = 0; i < 4; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new ShotPellet(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
+            case 'Shotgun3': {
+                for (let i = 0; i < 3; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new Shotgun3(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
+            case 'Cshotgun': {
+                for (let i = 0; i < 5; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new Cshotgun(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
+            case 'Pshotgun': {
+                for (let i = 0; i < 28; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new Pshotgun(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
+            case 'ShotPellet2': {
+                for (let i = 0; i < 3; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new ShotPellet2(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
+            case 'ShotPellet3': {
+                for (let i = 0; i < 3; ++i) {
+                const scatterAngle = (Math.PI / 180) * this.definition.bullet.scatterRate * (Math.random() - .5) * 10;
+                const bullet = new ShotPellet3(this, this.tank, tankDefinition, this.definition.angle + scatterAngle + this.tank.positionData.values.angle);
+                }
+                break;
+            }
             default:
                 util.log('Ignoring attempt to spawn projectile of type ' + this.definition.bullet.type);
                 break;
