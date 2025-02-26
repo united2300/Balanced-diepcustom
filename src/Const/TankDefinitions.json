@@ -353,7 +353,7 @@
         "borderWidth": 15,
         "barrels": [
             {
-                "angle": -0.7853981633974483,
+                "angle": 0.39269908169872414,
                 "offset": 0,
                 "size": 95,
                 "width": 42,
@@ -375,7 +375,7 @@
                 }
             },
             {
-                "angle": 0.7853981633974483,
+                "angle": -0.39269908169872414,
                 "offset": 0,
                 "size": 95,
                 "width": 42,
@@ -399,7 +399,7 @@
             {
                 "angle": 0,
                 "offset": 0,
-                "size": 95,
+                "size": 110,
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
@@ -848,7 +848,6 @@
         "levelRequirement": 15,
         "upgrades": [
             15,
-            11,
             19,
             31,
             65
@@ -935,7 +934,6 @@
         "upgradeMessage": "",
         "levelRequirement": 15,
         "upgrades": [
-            10,
             20,
             29
             ],
@@ -1263,7 +1261,8 @@
             49,
             54,
             55,
-            58
+            58,
+            59
         ],
         "flags": {
             "invisibility": false,
@@ -1795,7 +1794,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
-                "recoil": 0.45,
+                "recoil": 0.5,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -1817,7 +1816,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
-                "recoil": 0.45,
+                "recoil": 0.5,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -1839,7 +1838,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
-                "recoil": 0.45,
+                "recoil": 0.5,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -1861,7 +1860,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
-                "recoil": 0.45,
+                "recoil": 0.5,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -1883,7 +1882,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 1,
-                "recoil": 0.45,
+                "recoil": 0.5,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -1975,10 +1974,10 @@
                 "bullet": {
                     "type": "bullet",
                     "sizeRatio": 1,
-                    "health": 1.1,
-                    "damage": 1,
+                    "health": 1,
+                    "damage": 1.1,
                     "speed": 1.5,
-                    "scatterRate": 0.3,
+                    "scatterRate": 0.33,
                     "lifeLength": 1,
                     "absorbtionFactor": 1
                 }
@@ -2437,7 +2436,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 2.5,
-                "recoil": 0.3,
+                "recoil": 1,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -2459,7 +2458,7 @@
                 "width": 56.7,
                 "delay": 0.2,
                 "reload": 2.5,
-                "recoil": 0.3,
+                "recoil": 1,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -2700,8 +2699,8 @@
                 "bullet": {
                     "type": "bullet",
                     "sizeRatio": 1,
-                    "health": 1.1,
-                    "damage": 1,
+                    "health": 1,
+                    "damage": 1.1,
                     "speed": 1.5,
                     "scatterRate": 0.3,
                     "lifeLength": 1,
@@ -7090,7 +7089,7 @@
                 "width": 42,
                 "delay": 0,
                 "reload": 2.5,
-                "recoil": 0.3,
+                "recoil": 1,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -7112,7 +7111,7 @@
                 "width": 56.7,
                 "delay": 0.2,
                 "reload": 2.5,
-                "recoil": 0.3,
+                "recoil": 1,
                 "isTrapezoid": false,
                 "trapezoidDirection": 0,
                 "addon": null,
@@ -7480,7 +7479,7 @@
                     "health": 1,
                     "damage": 1,
                     "speed": 1.5,
-                    "scatterRate": 0.3,
+                    "scatterRate": 0.5,
                     "lifeLength": 1,
                     "absorbtionFactor": 1
                 }
@@ -8615,6 +8614,88 @@
                     "damage": 0.6,
                     "speed": 1.25,
                     "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+                }
+            }
+        ],
+        "stats": [
+            {
+                "name": "Movement Speed",
+                "max": 7
+            },
+            {
+                "name": "Reload",
+                "max": 7
+            },
+            {
+                "name": "Bullet Damage",
+                "max": 7
+            },
+            {
+                "name": "Bullet Penetration",
+                "max": 7
+            },
+            {
+                "name": "Bullet Speed",
+                "max": 7
+            },
+            {
+                "name": "Body Damage",
+                "max": 7
+            },
+            {
+                "name": "Max Health",
+                "max": 7
+            },
+            {
+                "name": "Health Regen",
+                "max": 7
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Ranger",
+        "upgradeMessage": "",
+        "levelRequirement": 45,
+        "upgrades": [],
+        "flags": {
+            "invisibility": false,
+            "zoomAbility": false,
+            "canClaimSquares": false,
+            "devOnly": false
+        },
+        "visibilityRateShooting": 0.23,
+        "visibilityRateMoving": 0.08,
+        "invisibilityRate": 0.03,
+        "fieldFactor": 0.7,
+        "absorbtionFactor": 1,
+        "speed": 1,
+        "maxHealth": 50,
+        "preAddon": null,
+        "postAddon": "pronounced",
+        "sides": 1,
+        "borderWidth": 15,
+        "barrels": [
+            {
+                "angle": 0,
+                "offset": 0,
+                "size": 120,
+                "width": 42,
+                "delay": 0,
+                "reload": 2,
+                "recoil": 4.5,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1.2,
+                    "damage": 1,
+                    "speed": 1.5,
+                    "scatterRate": 0,
                     "lifeLength": 1,
                     "absorbtionFactor": 1
                 }
